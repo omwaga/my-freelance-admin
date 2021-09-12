@@ -22,15 +22,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(200)
-            ->has(Order::factory()->count(random_int(1, 20)))
-            ->has(Assigned_order::factory()->count(random_int(1,5)))
-            ->has(Blocked_writer::factory()->count(random_int(0, 2)))
-            ->has(Favourite_writer::factory()->count(random_int(0, 5)))
-            ->has(Payed_order::factory()->count(random_int(2, 6)))
-            ->has(Notification::factory()->count(random_int(5, 20)))
-            ->has(Review::factory()->count(random_int(1, 2)))
-            ->has(Assigned_order::factory()->count(random_int(1, 3)))
-            ->create();
+        $this->call(UsersTableSeeder::class);
+
+        // User::factory()->count(200)
+        //     ->has(Order::factory()->count(random_int(1, 20)))
+        //     ->has(Assigned_order::factory()->count(random_int(1,5)))
+        //     ->has(Blocked_writer::factory()->count(random_int(0, 2)))
+        //     ->has(Favourite_writer::factory()->count(random_int(0, 5)))
+        //     ->has(Payed_order::factory()->count(random_int(2, 6)))
+        //     ->has(Notification::factory()->count(random_int(5, 20)))
+        //     ->has(Review::factory()->count(random_int(1, 2)))
+        //     ->has(Assigned_order::factory()->count(random_int(1, 3)))
+        //     ->create();
     }
 }
